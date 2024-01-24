@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ universidad.titulo }}{% endblock %}
+
+{% block content %}
+    <h2>{{ universidad.titulo }}</h2>
+    <img src="{{ url_for('static', filename=universidad.imagen) }}" alt="Imagen de la universidad">
+    <p>{{ universidad.descripcion }}</p>
+
+    <h3>Carreras:</h3>
+    <ul>
+        {% for carrera in universidad.carreras %}
+            <li>{{ carrera }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
